@@ -1,0 +1,120 @@
+package com.soctest.soctest.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "exames")
+public class Exames {
+
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.AUTO)
+	    private long id;
+
+	    @NotBlank
+		@Column(unique=true, name = "nomePaciente")
+	    private String nomePaciente;
+
+	    //@NotBlank
+	    // @DateTimeFormat(pattern = "dd/MM/yyyy")
+		//@Temporal(TemporalType.TIMESTAMP)
+	    @Column(name = "dataNascimento")
+		private LocalDate dataNascimento;
+	    
+	    @NotBlank
+	    @Column(name = "contato")
+	    private long contato;
+	    
+	    @NotBlank
+	    @Column(name = "nomeExame")
+	    private String nomeExame;
+	    
+	    //@NotBlank
+		@Future
+	    // @DateTimeFormat(pattern = "dd/MM/yyyy")
+		//@Temporal(TemporalType.TIMESTAMP)
+	    @Column(name = "dataExame")
+		private LocalDate dataExame;
+	    
+	    @Column(name = "resultadoExame")
+		private String resultadoExame;
+	    
+	    public Exames() {}
+
+	    public Exames(String nomePaciente, LocalDate dataNascimento, long contato, String nomeExame, LocalDate dataExame) {
+	        this.nomePaciente = nomePaciente;
+	        this.dataNascimento = dataNascimento;
+	        this.contato = contato;
+	        this.nomeExame = nomeExame;
+	        this.dataExame = dataExame;
+	    }
+
+		public long getId() {
+			return id;
+		}
+
+		public void setId(long id) {
+			this.id = id;
+		}
+
+		public String getNomePaciente() {
+			return nomePaciente;
+		}
+
+		public void setNomePaciente(String nomePaciente) {
+			this.nomePaciente = nomePaciente;
+		}
+
+		public LocalDate getDataNascimento() {
+			return dataNascimento;
+		}
+
+		public void setDataNascimento(LocalDate dataNascimento) {
+			this.dataNascimento = dataNascimento;
+		}
+
+		public long getContato() {
+			return contato;
+		}
+
+		public void setContato(long contato) {
+			this.contato = contato;
+		}
+
+		public String getNomeExame() {
+			return nomeExame;
+		}
+
+		public void setNomeExame(String nomeExame) {
+			this.nomeExame = nomeExame;
+		}
+
+		public LocalDate getDataExame() {
+			return dataExame;
+		}
+
+		public void setDataExame(LocalDate dataExame) {
+			this.dataExame = dataExame;
+		}
+
+		public String getResultadoExame() {
+			return resultadoExame;
+		}
+
+		public void setResultadoExame(String resultadoExame) {
+			this.resultadoExame = resultadoExame;
+		}
+	    
+	    
+}

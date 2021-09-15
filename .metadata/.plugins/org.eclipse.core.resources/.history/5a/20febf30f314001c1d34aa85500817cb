@@ -1,0 +1,46 @@
+package com.soctest.soctest.model;
+
+
+@Entity
+@Table(name = "exames")
+public class Exames {
+
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.AUTO)
+	    private long id;
+
+	    @NotBlank(message = "Nome obrigatório")
+	    @Column(name = "nomePaciente")
+		@Column(unique=true)
+	    private String nomePaciente;
+
+	    @NotBlank(message = "Data de nascimento obrigatório")
+	    // @DateTimeFormat(pattern = "dd/MM/yyyy")
+		@Temporal(TemporalType.TIMESTAMP)
+	    @Column(name = "dataNascimento")
+		private LocalDate dataNascimento;
+	    
+	    @NotBlank(message = "Telefone de contato obrigatório")
+	    @Column(name = "contato")
+	    private long contato;
+	    
+	    @NotBlank(message = "Nome do exame obrigatório")
+	    @Column(name = "nomeExame")
+	    private String nomeExame;
+	    
+	    @NotBlank(message = "Data do exame obrigatório")
+		@Future
+	    // @DateTimeFormat(pattern = "dd/MM/yyyy")
+		@Temporal(TemporalType.TIMESTAMP)
+	    @Column(name = "dataExame")
+		private LocalDate dataExame;
+	    
+	    @NotBlank(message = "Horário do exame obrigatório")
+	    @Column(name = "horarioExame")
+		private String horarioExame;
+	    
+	    @Column(name = "resultadoExame")
+	    @Size(min=0, max=500)
+		private String resultadoExame;
+	    
+}

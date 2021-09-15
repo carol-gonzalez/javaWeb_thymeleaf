@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Size"/>
+    <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
+    <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Future"/>
+    <fullyQualifiedTypeName name="com.soctest.soctest.repository.ExamesRepository"/>
+    <fullyQualifiedTypeName name="com.soctest.soctest.model.Exames"/>
+</qualifiedTypeNameHistroy>

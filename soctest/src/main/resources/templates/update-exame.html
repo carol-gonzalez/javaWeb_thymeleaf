@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Editar Exame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css"/>   
+    
+</head>
+
+<body>
+<div class="container my-5">
+    <div class="title">
+		<h2> Editar Informações</h2>
+	</div>
+    <div class="card">
+        <!-- <div class="card-body">  -->
+            <div class="col-md-12">
+                
+                <form action="#" th:action="@{/exames/update/{id}(id=${exames.id})}" th:object="${exames}" method="post">
+                    
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="nomePaciente" class="col-form-label">Nome do Paciente</label> <input type="text" th:field="*{nomePaciente}" class="form-control" id="nomePaciente" placeholder="Nome do Paciente"> <span th:if="${#fields.hasErrors('nomePaciente')}" th:errors="*{nomePaciente}" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group col-md-4">
+                            <label for="dataNascimento" class="col-form-label">Data de Nascimento</label> <input type="text" th:field="*{dataNascimento}" class="form-control" id="dataNascimento" placeholder="Data de Nascimento"> <span th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group col-md-8">
+                            <label for="contato" class="col-form-label">Telefone de Contato</label> <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" th:field="*{contato}" class="form-control" id="contato" placeholder="Telefone de Contato"> <span th:if="${#fields.hasErrors('contato')}" th:errors="contato" class="text-danger"></span>
+                        </div>
+                        </div>
+                        
+                        <div class= "row">
+                        <div class="form-group col-md-8">
+                            <label for="nomeExame" class="col-form-label">Nome do Exame</label> <input type="text" th:field="*{nomeExame}" class="form-control" id="nomeExame" placeholder="Nome do Exame"> <span th:if="${#fields.hasErrors('nomeExame')}" th:errors="nomeExame" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="dataExame" class="col-form-label">Data do Exame</label> <input type="text" th:field="*{dataExame}" class="form-control" id="dataExame" placeholder="Data do Exame"> <span th:if="${#fields.hasErrors('dataExame')}" th:errors="dataExame" class="text-danger"></span>
+                        </div>
+                        </div>
+                        
+                        <div class = "row">
+                        <div class="form-group col-md-12">
+                            <label for="resultadoExame" class="col-form-label">Resultado do Exame</label> <input type="text" th:field="*{resultadoExame}" class="form-control" id="resultadoExame" placeholder="Resultado do Exame"> <span th:if="${#fields.hasErrors('resultadoExame')}" th:errors="resultadoExame" class="text-danger"></span>
+                        </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <input type="submit" class="btn btn-primary" value="Editar Informações">
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>

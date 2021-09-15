@@ -1,0 +1,5 @@
+package com.soctest.soctest.repository;
+
+public interface ExamesRepository {
+
+}
